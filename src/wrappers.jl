@@ -118,9 +118,9 @@ function hybrj(f!::Function, g!::Function, x0::Vector{Float64}, xtol::Float64,
     r = Array{Float64}(undef, lr)
     qtf = Array{Float64}(undef, n)
     wa1 = Array{Float64}(undef, n)
-    wa2 = Array{Float64}(undef, n)
-    wa3 = Array{Float64}(undef, n)
-    wa4 = Array{Float64}(undef, n)
+    wa2 = Array{Float64}(undef, n) .+ 1*n
+    wa3 = Array{Float64}(undef, n) .+ 2*n
+    wa4 = Array{Float64}(undef, n) .+ 3*n
 
     if show_trace
         show(trace)
