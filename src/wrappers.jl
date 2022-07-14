@@ -103,7 +103,7 @@ function hybrj(f!::Function, g!::Function, x0::Vector{Float64}, xtol::Float64,
                show_trace::Bool, tracing::Bool, maxit::Int;
                _n::Int=length(x0), ml::Int=_n-1, mu::Int=_n-1,
                maxfev::Int=Int(typemax(Cint)),
-               epsfcn::Float64=0.0, diag::Vector{Float64}=fill(convert(Float64,_n), _n),
+               epsfcn::Float64=0.0, diag::Vector{Float64}=fill(1.0, _n),
                mode::Int=2, factor::Float64=100.0, nprint::Int=0,
                lr::Cint=ceil(Cint, _n*(_n+1)/2))
     n = length(x0)
