@@ -109,10 +109,10 @@ function hybrj(f!::Function, g!::Function, x0::Vector{Float64}, xtol::Float64,
     n = length(x0)
     ldfjac = n
     x = copy(x0)
-    fvec = similar(x)
+    fvec = Array{Float64}(undef, n)
     fjac = Array{Float64}(undef, n, n)
-    lwa = ceil(Int, (n*(3*n+13))/2)
-    wa = ones(lwa)
+    #lwa = ceil(Int, (n*(3*n+13))/2)
+    #wa = ones(lwa)
     trace = AlgoTrace(x0, show_trace, tracing, maxit)
 
     r = Array{Float64}(undef, lr)
@@ -200,8 +200,8 @@ function hybrd1(f!::Function, x0::Vector{Float64}, tol::Float64,
     x = copy(x0)
     fvec = similar(x)
     n = length(x)
-    lwa = ceil(Int, (n*(3*n+13))/2)
-    wa = ones(lwa)
+    #lwa = ceil(Int, (n*(3*n+13))/2)
+    #wa = ones(lwa)
     trace = AlgoTrace(x0, show_trace, tracing, maxit)
 
     function _hybrd1_func_wrapper(_p::Ptr{Cvoid}, n::Cint, _x::Ptr{Cdouble},
