@@ -177,7 +177,7 @@ function hybrj(f!::Function, g!::Function, x0::Vector{Float64}, xtol::Float64,
         msg = msg * string(return_code)
     end
 
-    coverged = return_code == 1 || norm(fvec, Inf) <= xtol
+    coverged = return_code == 1 #|| norm(fvec, Inf) <= xtol
     trace.tot_time = time() - trace.start_time
 
     SolverResults("Modified Powell (User Jac, Expert)", x0, x, fvec, return_code, coverged, msg, trace)
