@@ -176,7 +176,7 @@ function hybrj(f!::Function, g!::Function, x0::Vector{Float64}, xtol::Float64,
     if return_code < -1
         msg = msg * string(return_code)
     end
-
+    println(return_code)
     coverged = return_code == 1 #|| norm(fvec, Inf) <= xtol
     trace.tot_time = time() - trace.start_time
 
